@@ -17,13 +17,19 @@ A relational database and set of analytical T-SQL queries for a movie rental bus
 | File | Description |
 |---|---|
 | `schema.sql` | `CREATE TABLE` statements in dependency order |
+| `sample_data.sql` | Invented sample data (8 members, 8 movies, 14 videos, 8 rentals) |
 | `queries.sql` | The four analysis queries |
 
 ## How to run
 1. Open SSMS and create or select a database.
-2. Run `schema.sql`.
-3. Load your own sample data (rows for each table).
-4. Run the queries in `queries.sql`.
+2. Run `schema.sql`, then `sample_data.sql`.
+3. Run the queries in `queries.sql`.
+
+## Expected results on the sample data
+- **Query 1:** rentals 5001, 5003 and 5007
+- **Query 2:** rental 5003 (8 days), all four videos
+- **Query 3:** members 301 and 302
+- **Query 4:** five genres returned (six exist, so `TOP 5` drops the lowest)
 
 ## Tech
 SQL Server (T-SQL), SSMS
